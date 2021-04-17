@@ -129,24 +129,25 @@ print(max(sum_even, sum_odd))
 
 print("--------------QUESTION:- 9-----------------")
 
-user_input9 = list(input("Enter the string: "))
-
-string1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+user_input = list(input("Enter the string: "))
 
 result = []
 
-for i in string1:
-    if i not in result:
+for i in user_input:
+    if i.isalpha():
         result.append(i)
 
-        count = 0
+#print(result)
 
-        for j in range(len(user_input9)):
-            if i == user_input9[j]:
-                count += 1
+freq = {}
 
-        if count != 0:
-            print("{} {}".format(i, count))
+for j in result:
+    if j in freq:
+        freq[j] += 1
+    else:
+        freq[j] = 1
+
+print(freq)
 
 # #Question:-10
 
